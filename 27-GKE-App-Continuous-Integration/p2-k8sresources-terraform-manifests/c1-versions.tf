@@ -1,14 +1,14 @@
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.9"
+  required_version = ">= 1.16.5"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = ">= 6.0.0"
+      version = ">= 8.7.0"
     }
     kubernetes = {
       source = "hashicorp/kubernetes"
-      version = ">= 2.32"
+      version = ">= 3.3.0"
     }      
   }
   backend "gcs" {

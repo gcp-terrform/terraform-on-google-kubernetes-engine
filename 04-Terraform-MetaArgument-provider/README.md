@@ -10,11 +10,11 @@ description: Learn Terraform Meta-Argument Provider
 ```hcl
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.8"
+  required_version = ">= 1.16.5"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = ">= 5.34.0"
+      version = ">= 8.7.0"
     }
   }
 }

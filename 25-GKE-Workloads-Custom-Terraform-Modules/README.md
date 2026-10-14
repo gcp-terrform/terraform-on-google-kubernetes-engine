@@ -13,11 +13,11 @@ description: Learn to implement GKE Kubernetes Deployment Custom Terraform Modul
 ```hcl
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.9"
+  required_version = ">= 1.16.5"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = ">= 5.40.0"
+      version = ">= 8.7.0"
     }
   }
 }
@@ -154,7 +154,7 @@ Observation: If server version displayed, that means kubectl cli configured succ
 ## Output
 Client Version: v1.29.7
 Kustomize Version: v5.0.4-0.20230601165947-6ce0bf390ce3
-Server Version: v1.29.6-gke.1254000
+# Server version varies by cluster and release channel; check with kubectl version
 
 # List Kubernetes Nodes
 kubectl get nodes

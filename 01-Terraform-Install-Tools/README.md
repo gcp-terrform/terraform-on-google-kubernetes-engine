@@ -102,7 +102,7 @@ COPY Package to "terraform-install" folder
 
 # Unzip
 unzip <PACKAGE-NAME>
-unzip terraform_1.8.5_darwin_amd64.zip
+unzip terraform_1.16.5_darwin_amd64.zip
 
 # Copy terraform binary to /usr/local/bin
 echo $PATH

@@ -17,11 +17,11 @@ description: Learn Terraform Settings, Providers and Resource Blocks on Google C
 ```t
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.8"
+  required_version = ">= 1.16.5"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = ">= 5.32.0"
+      version = ">= 8.7.0"
     }
   }
 }

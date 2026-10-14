@@ -14,11 +14,11 @@ description: Learn to implement CloudSQL Private Database using Terraform and us
 ```hcl
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.9"
+  required_version = ">= 1.16.5"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = ">= 5.38.0"
+      version = ">= 8.7.0"
     }
   }
   backend "gcs" {
@@ -298,15 +298,15 @@ mysql> show schemas;
 ```hcl
 # Terraform Settings Block
 terraform {
-  required_version = ">= 1.9"
+  required_version = ">= 1.16.5"
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = ">= 5.38.0"
+      version = ">= 8.7.0"
     }
     kubernetes = {
       source = "hashicorp/kubernetes"
-      version = ">= 2.31"
+      version = ">= 3.3.0"
     }      
   }
   backend "gcs" {
