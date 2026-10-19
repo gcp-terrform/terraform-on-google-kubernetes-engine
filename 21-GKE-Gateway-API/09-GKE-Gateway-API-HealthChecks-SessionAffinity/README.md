@@ -24,8 +24,8 @@ gcloud compute addresses create my-regional-ip1 \
     --project=my-project-id
 
 gcloud compute addresses create my-regional-ip1 \
-    --region="us-central1" \
-    --project=gcplearn9 \
+    --region="asia-south1" \
+    --project=petromin-gms \
     --network-tier="STANDARD"
 
 # List IP Addresss    
@@ -58,14 +58,14 @@ Important Note: If no location provided it is global certificate
 # Change Directory
 cd p2-regional-k8sresources-yaml/self-signed-ssl
 
-# Create Regional Cert: us-central1
-gcloud certificate-manager certificates create "app1-us-central1-cert" \
+# Create Regional Cert: asia-south1
+gcloud certificate-manager certificates create "app1-asia-south1-cert" \
     --certificate-file="app1.crt" \
     --private-key-file="app1.key" \
-    --location="us-central1"    
+    --location="asia-south1"
 
 # Regional: List Certificates
-gcloud certificate-manager certificates list --location us-central1
+gcloud certificate-manager certificates list --location asia-south1
 ```
 
 ### Step-02-05: c1-03-myapp1-healthcheck.yaml

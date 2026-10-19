@@ -3,14 +3,14 @@
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 # Environment Variable

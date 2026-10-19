@@ -41,14 +41,14 @@ provider "google" {
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region1" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 # Environment Variable
@@ -75,8 +75,8 @@ variable "cloudsql_database_version" {
 
 ### Step-02-03: terraform.tfvars
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 cloudsql_database_version = "MYSQL_8_0"
@@ -240,7 +240,7 @@ resource "google_compute_firewall" "fw_ssh" {
 resource "google_compute_instance" "myapp1" {
   name         = "mysq-client"
   machine_type = "e2-micro"
-  zone         = "us-central1-a"
+  zone         = "asia-south1-a"
   tags        = [tolist(google_compute_firewall.fw_ssh.target_tags)[0]]
   boot_disk {
     initialize_params {
@@ -322,14 +322,14 @@ terraform {
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region1" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 
@@ -349,8 +349,8 @@ variable "business_divsion" {
 ```
 ### Step-03-03: terraform.tfvars
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 ```

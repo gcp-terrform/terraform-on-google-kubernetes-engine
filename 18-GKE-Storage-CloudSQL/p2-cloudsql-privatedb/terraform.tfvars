@@ -1,5 +1,5 @@
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 cloudsql_database_version = "MYSQL_8_0"

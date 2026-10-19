@@ -114,7 +114,7 @@ resource "google_compute_address" "bastion_internal_ip" {
 resource "google_compute_instance" "bastion" {
   name         = "${local.name}-bastion-vm"
   machine_type = var.machine_type
-  zone         = "us-central1-a"
+  zone         = "asia-south1-a"
   tags        = [tolist(google_compute_firewall.fw_ssh.target_tags)[0]]
   boot_disk {
     initialize_params {
@@ -195,13 +195,13 @@ data "terraform_remote_state" "gke" {
 cd 15-GKE-Private-Standard-Cluster-private-endpoint
 
 # Copy files to Bastion VM
-gcloud compute scp --recurse p3-k8sresources-terraform-manifests "hr-dev-bastion-vm:/tmp" --zone "us-central1-a" --tunnel-through-iap --project "gcplearn9"
+gcloud compute scp --recurse p3-k8sresources-terraform-manifests "hr-dev-bastion-vm:/tmp" --zone "asia-south1-a" --tunnel-through-iap --project "petromin-gms"
 ```
 
 ## Step-10: Connect to Bastion VM and Verify
 ```t
 # Connect to bastion VM
-gcloud compute ssh --zone "us-central1-a" "hr-dev-bastion-vm" --tunnel-through-iap --project "gcplearn9"
+gcloud compute ssh --zone "asia-south1-a" "hr-dev-bastion-vm" --tunnel-through-iap --project "petromin-gms"
 
 # Verify installed software
 gcloud version
@@ -216,10 +216,10 @@ gcloud config list
 
 # Set Project
 gcloud config set project PROJECT_ID
-gcloud config set project gcplearn9
+gcloud config set project petromin-gms
 
 # Configure kubectl cli
-gcloud container clusters get-credentials hr-dev-gke-cluster --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster --region asia-south1 --project petromin-gms
 
 # List Kubernetes Nodes
 kubectl get nodes
@@ -271,8 +271,8 @@ curl http://<LOAD-BALANCER-IP>
 gcloud compute instances list
 
 ## SSH to GKE Node VM
-gcloud compute ssh --zone "ZONE" "VM-NAME" --internal-ip  --project "gcplearn9"
-gcloud compute ssh --zone "us-central1-b" "gke-hr-dev-gke-clust-hr-dev-linux-nod-50d31441-2s7c" --internal-ip  --project "gcplearn9"
+gcloud compute ssh --zone "ZONE" "VM-NAME" --internal-ip  --project "petromin-gms"
+gcloud compute ssh --zone "asia-south1-b" "gke-hr-dev-gke-clust-hr-dev-linux-nod-50d31441-2s7c" --internal-ip  --project "petromin-gms"
 exit
 ```
 

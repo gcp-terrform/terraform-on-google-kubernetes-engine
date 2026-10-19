@@ -40,14 +40,14 @@ provider "google" {
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region1" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 # GCP Compute Engine Machine Type
@@ -305,8 +305,8 @@ resource "google_compute_router_nat" "cloud_nat" {
 
 ## Step-13: terraform.tfvars
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 machine_type    = "e2-medium"
 environment     = "dev"
 business_divsion = "hr"
@@ -342,7 +342,7 @@ terraform apply -auto-approve
 
 # Configure kubectl cli
 gcloud container clusters get-credentials CLUSTER_NAME --region REGION --project PROJECT_ID
-gcloud container clusters get-credentials hr-dev-gke-cluster --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster --region asia-south1 --project petromin-gms
 
 # kubectl version client and server(cluster)
 kubectl version 

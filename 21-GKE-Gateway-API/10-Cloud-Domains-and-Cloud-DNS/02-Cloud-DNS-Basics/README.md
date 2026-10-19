@@ -21,24 +21,24 @@
 ```t
 # Set Project
 gcloud config set project PROJECT_ID
-gcloud config set project gcplearn9
+gcloud config set project petromin-gms
 
 # Reserve the External Static IP Address 
-gcloud compute addresses create ext-static-ip-for-dns-demo --region=us-central1
+gcloud compute addresses create ext-static-ip-for-dns-demo --region=asia-south1
 ```
 
 ## Step-04: Cerate VM Instance with reserved External IP
 ```t
 # Create VM with External [or] Create using Webconsole
 gcloud compute instances create cloud-dns-demovm \
-    --zone=us-central1-a \
+    --zone=asia-south1-a \
     --machine-type=e2-micro \
     --network-interface=subnet=mysubnet1,address=EXTERNAL_IP \
     --metadata-from-file=startup-script=nginx-webserver.sh
 
 # Replaced EXTERNAL_IP 
 gcloud compute instances create cloud-dns-demovm \
-    --zone=us-central1-a \
+    --zone=asia-south1-a \
     --machine-type=e2-micro \
     --network-interface=subnet=mysubnet1,address=34.41.67.198 \
     --metadata-from-file=startup-script=nginx-webserver.sh
@@ -93,7 +93,7 @@ http://mydnsdemo.kalyanreddydaida.com
 ```t
 # List and Delete Compute Instance
 gcloud compute instances list 
-gcloud compute instances delete cloud-dns-demovm --zone=us-central1-a --delete-disks=all
+gcloud compute instances delete cloud-dns-demovm --zone=asia-south1-a --delete-disks=all
 
 # List and Delete Firewall rule which we created
 gcloud compute firewall-rules list --network=default

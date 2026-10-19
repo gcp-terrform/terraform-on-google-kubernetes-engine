@@ -21,7 +21,7 @@ description: Learn to Implement Continuous Integrationf for a Dockerized App usi
 - **Format:** Docker
 - **Mode:** Remote
 - **Location type:** Region
-- **Region:** us-central1
+- **Region:** asia-south1
 - REST ALL LEAVE TO DEFAULTS
 - Click on **CREATE**
 
@@ -52,7 +52,7 @@ steps:
   args:
   - 'build'
   - '-t'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
   - '.'
 
 # This step pushes the image to Artifact Registry
@@ -62,7 +62,7 @@ steps:
   id: Push Docker Image
   args:
   - 'push'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
 # [END cloudbuild - Docker Image Build]
 ```
 
@@ -99,14 +99,14 @@ git push
 - **Only select repositories:** stacksimplify/terraform-gcp-gke-app-devops
 - Click on **Install**
 - Login to Google Cloud and Click on **Authorize Google Cloud Build**
-- **Select project in GCP:** gcplearn9
+- **Select project in GCP:** petromin-gms
 - IF ALREADY CONFIGURED, PLEASE IGNORE THIS STEP
 
 ## Step-07: GCP Cloud Build: Create HOST Connection [IGNORE - IF ALREADY CONFIGURED]
 - Go to Cloud Build -> Repositories -> 2nd Gen -> **CREATE HOST CONNECTION**
 - **Select Provider:** GitHub
 - **Configure Connection:** 
-  - **Region:** us-central1
+  - **Region:** asia-south1
   - **Name:** myapp1-workloads
   - Click on **CONNECT**
   - Click on **CONTINUE**
@@ -125,7 +125,7 @@ git push
 ## Step-09: GCP Cloud Build: Create Trigger
 - Go to Cloud Build -> Triggers -> **CREATE TRIGGER**
 - **Name:** myapp1-ci
-- **Region:** us-central1
+- **Region:** asia-south1
 - **Description:** My App1 Continuous Integration trigger
 - **Event:**
   - **Repository event that invokes trigger:** Push to a branch
@@ -159,10 +159,10 @@ git push
 - Update Docker Image path and tag in **main.tf**
 ```hcl
 # Before
-image = "us-central1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"
+image = "asia-south1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"
 
 # Replace GOOGLE_CLOUD_PROJECT,  COMMIT_SHA
-image = "us-central1-docker.pkg.dev/gcplearn9/myapps-repository/myapp1:xxxxx"
+image = "asia-south1-docker.pkg.dev/petromin-gms/myapps-repository/myapp1:xxxxx"
 ```
 ### Step-11-02: Execute Terraform Commands and Verify
 ```t
@@ -218,10 +218,10 @@ git push
 - Update Docker Image path and tag in **main.tf**
 ```hcl
 # Before
-image = "us-central1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"
+image = "asia-south1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"
 
 # Replace GOOGLE_CLOUD_PROJECT,  COMMIT_SHA
-image = "us-central1-docker.pkg.dev/gcplearn9/myapps-repository/myapp1:xxxxx"
+image = "asia-south1-docker.pkg.dev/petromin-gms/myapps-repository/myapp1:xxxxx"
 ```
 ### Step-13-02: Execute Terraform Commands and Verify
 ```t

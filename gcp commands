@@ -1,0 +1,18 @@
+## Step-02: Install kubectl CLI
+```t
+# Verify gcloud 
+gcloud config configurations list
+
+# Update gcloud
+gcloud components update
+
+# Install kubectl
+gcloud components install kubectl
+Observation:
+1. Installs kubectl
+2. Installs gke-gcloud-auth-plugin
+
+# kubectl version commands
+kubectl version --client
+kubectl version
+```

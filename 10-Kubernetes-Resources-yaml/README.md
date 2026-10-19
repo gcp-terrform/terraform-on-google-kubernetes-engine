@@ -51,7 +51,7 @@ spec:
 ```t
 # Configure kubectl cli
 gcloud container clusters get-credentials CLUSTER_NAME --region REGION --project PROJECT_ID
-gcloud container clusters get-credentials hr-dev-gke-cluster --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster --region asia-south1 --project petromin-gms
 
 # Deploy Kubernetes Manifests
 kubectp apply -f p2-k8sresources-yaml

@@ -41,14 +41,14 @@ provider "google" {
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region1" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 # Environment Variable
@@ -235,8 +235,8 @@ resource "google_compute_router_nat" "cloud_nat" {
 ```
 ### Step-02-08: terraform.tfvars
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 subnet_ip_range  = "10.128.0.0/20"
@@ -266,7 +266,7 @@ terraform apply -auto-approve
 2. GKE Cluster Details
 
 # Configure kubectl cli
-gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot --region asia-south1 --project petromin-gms
 
 # List Kubernetes Nodes
 kubectl get nodes
@@ -390,7 +390,7 @@ terraform plan
 terraform apply -auto-approve
 
 # Configure kubectl cli
-gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot --region asia-south1 --project petromin-gms
 
 # List Kubernetes Nodes
 kubectl get nodes

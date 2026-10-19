@@ -45,7 +45,7 @@ terraform apply -auto-approve
 ```t
 # Configure kubectl cli
 gcloud container clusters get-credentials CLUSTER-NAME --region REGION --project PROJECT-ID
-gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot --region asia-south1 --project petromin-gms
 
 # Get Kubernetes versions
 kubectl versions

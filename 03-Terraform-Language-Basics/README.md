@@ -33,8 +33,8 @@ terraform {
 ```t
 # Provider Block
 provider "google" {
-  project     = "gcplearn9"
-  region      = "us-central1"
+  project     = "petromin-gms"
+  region      = "asia-south1"
 }
 ```
 
@@ -52,7 +52,7 @@ resource "google_compute_network" "myvpc" {
 # Resource: Subnet
 resource "google_compute_subnetwork" "mysubnet" {
   name = "subnet1"
-  region = "us-central1"
+  region = "asia-south1"
   ip_cidr_range = "10.128.0.0/20"
   network = google_compute_network.myvpc.id 
 }
@@ -100,7 +100,7 @@ resource "google_compute_firewall" "fw_http" {
 resource "google_compute_instance" "myapp1" {
   name         = "myapp1"
   machine_type = "e2-micro"
-  zone         = "us-central1-a"
+  zone         = "asia-south1-a"
   tags        = [tolist(google_compute_firewall.fw_ssh.target_tags)[0], tolist(google_compute_firewall.fw_http.target_tags)[0]]
 
 

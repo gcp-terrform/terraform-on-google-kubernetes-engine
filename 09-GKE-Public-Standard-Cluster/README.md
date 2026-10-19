@@ -32,7 +32,7 @@ kubectl version
 ### Step-03-01: Create Cloud Storage Bucket to Store Terraform State files
 - **Name your bucket:** terraform-on-gcp-gke
 - **Choose where to store your data:** 
-  - **Region:** us-central1
+  - **Region:** asia-south1
 - **Choose a storage class for your data:**  
   - **Set a default class:** Standard
 - **Choose how to control access to objects:**  
@@ -76,14 +76,14 @@ provider "google" {
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region1" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 # GCP Compute Engine Machine Type
@@ -260,7 +260,7 @@ terraform apply -auto-approve
 
 # Configure kubectl cli
 gcloud container clusters get-credentials CLUSTER_NAME --region REGION --project PROJECT_ID
-gcloud container clusters get-credentials hr-dev-gke-cluster --region us-central1 --project gcplearn9
+gcloud container clusters get-credentials hr-dev-gke-cluster --region asia-south1 --project petromin-gms
 
 # kubectl version client and server(cluster)
 kubectl version 

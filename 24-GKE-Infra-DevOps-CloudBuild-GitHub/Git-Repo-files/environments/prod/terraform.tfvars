@@ -1,5 +1,5 @@
-gcp_project     = "gcplearn9"
-gcp_region     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region     = "asia-south1"
 environment     = "prod"
 business_divsion = "hr"
 subnet_ip_range  = "10.138.0.0/20"

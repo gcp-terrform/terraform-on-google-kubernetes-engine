@@ -21,8 +21,8 @@ gcloud compute addresses create my-regional-ip1 \
     --project=my-project-id
 
 gcloud compute addresses create my-regional-ip1 \
-    --region="us-central1" \
-    --project=gcplearn9 \
+    --region="asia-south1" \
+    --project=petromin-gms \
     --network-tier="STANDARD"
 
 # List IP Addresss    

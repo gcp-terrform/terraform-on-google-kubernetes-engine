@@ -37,8 +37,8 @@ terraform {
 ```
 3. **terraform.tfvars:** Ensure environment is **environment     = "dev"**
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 subnet_ip_range  = "10.128.0.0/20"
@@ -69,8 +69,8 @@ terraform {
 ```
 3. **terraform.tfvars:** Ensure environment is **environment     = "prod"**
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region     = "asia-south1"
 environment     = "prod"
 business_divsion = "hr"
 subnet_ip_range  = "10.138.0.0/20"
@@ -251,14 +251,14 @@ git push
 - **Only select repositories:** stacksimplify/terraform-gcp-gke-infra-devops
 - Click on **Install**
 - Login to Google Cloud and Click on **Authorize Google Cloud Build**
-- **Select project in GCP:** gcplearn9
+- **Select project in GCP:** petromin-gms
 
 
 ## Step-07: GCP Cloud Build: Create HOST Connection
 - Go to Cloud Build -> Repositories -> 2nd Gen -> **CREATE HOST CONNECTION**
 - **Select Provider:** GitHub
 - **Configure Connection:** 
-  - **Region:** us-central1
+  - **Region:** asia-south1
   - **Name:** gke-cluster-trigger1
   - Click on **CONNECT**
   - Click on **CONTINUE**
@@ -276,7 +276,7 @@ git push
 ## Step-09: GCP Cloud Build: Create Trigger
 - Go to Cloud Build -> Triggers -> **CREATE TRIGGER**
 - **Name:** gke-cluster-trigger1
-- **Region:** us-central1
+- **Region:** asia-south1
 - **Description:** My GKE Cluster Cloud Build Trigger
 - **Event:**
   - **Repository event that invokes trigger:** Push to a branch

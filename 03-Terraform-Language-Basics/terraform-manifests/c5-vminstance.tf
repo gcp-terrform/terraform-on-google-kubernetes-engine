@@ -2,7 +2,7 @@
 resource "google_compute_instance" "myapp1" {
   name         = "myapp1"
   machine_type = "e2-micro"
-  zone         = "us-central1-a"
+  zone         = "asia-south1-a"
   tags        = [tolist(google_compute_firewall.fw_ssh.target_tags)[0], tolist(google_compute_firewall.fw_http.target_tags)[0]]
   boot_disk {
     initialize_params {

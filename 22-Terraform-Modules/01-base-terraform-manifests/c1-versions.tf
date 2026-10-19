@@ -8,7 +8,7 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket = "gcplearn9-tfstate"
+    bucket = "petromin-gms-tfstate"
     prefix = "env/tfvm-base"
   }  
 }

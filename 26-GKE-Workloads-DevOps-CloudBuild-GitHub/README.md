@@ -46,8 +46,8 @@ terraform {
 ```
 3. **terraform.tfvars:** Ensure environment is **environment     = "dev"**
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 ```
@@ -78,8 +78,8 @@ terraform {
 ```
 3. **terraform.tfvars:** Ensure environment is **environment  = "prod"**
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 ```
@@ -256,14 +256,14 @@ git push
 - **Only select repositories:** stacksimplify/terraform-gcp-gke-k8s-devops
 - Click on **Install**
 - Login to Google Cloud and Click on **Authorize Google Cloud Build**
-- **Select project in GCP:** gcplearn9
+- **Select project in GCP:** petromin-gms
 
 
 ## Step-07: GCP Cloud Build: Create HOST Connection [OPTIONAL - IF ALREADY EXISTS]
 - Go to Cloud Build -> Repositories -> 2nd Gen -> **CREATE HOST CONNECTION**
 - **Select Provider:** GitHub
 - **Configure Connection:** 
-  - **Region:** us-central1
+  - **Region:** asia-south1
   - **Name:** myapp1-workloads
   - Click on **CONNECT**
   - Click on **CONTINUE**
@@ -281,7 +281,7 @@ git push
 ## Step-09: GCP Cloud Build: Create Trigger
 - Go to Cloud Build -> Triggers -> **CREATE TRIGGER**
 - **Name:** myapp1-cd
-- **Region:** us-central1
+- **Region:** asia-south1
 - **Description:** My GKE Workloads Cloud Build Trigger
 - **Event:**
   - **Repository event that invokes trigger:** Push to a branch

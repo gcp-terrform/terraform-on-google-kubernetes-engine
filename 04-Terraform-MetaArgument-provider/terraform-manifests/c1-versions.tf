@@ -9,16 +9,16 @@ terraform {
   }
 }
 
-# Terraform Provider-1: us-central1
+# Terraform Provider-1: asia-south1
 provider "google" {
-  project = "gcplearn9"
-  region = "us-central1"
-  alias = "us-central1"    
+  project = "petromin-gms"
+  region = "asia-south1"
+  alias = "asia_south1"
 }
 
-# Terraform Provider-2: europe-west1
+# Terraform Provider-2: asia-south1 secondary
 provider "google" {
-  project = "gcplearn9"
-  region = "europe-west1"
-  alias = "europe-west1"    
+  project = "petromin-gms"
+  region = "asia-south1"
+  alias = "asia_south1_secondary"
 }

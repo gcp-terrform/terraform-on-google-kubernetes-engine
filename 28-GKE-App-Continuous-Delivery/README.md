@@ -42,7 +42,7 @@ cat id_github.pub
 - **Key:** COPY PUBLIC SSH KEY from **01-SSH-Keys/id_github.pub**
 
 ### Step-02-04: Review main.tf.tpl
-- Ensure the following is present **image = "us-central1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"**
+- Ensure the following is present **image = "asia-south1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"**
 ```hcl
 # Resource: Kubernetes Deployment Manifest
 resource "kubernetes_deployment_v1" "myapp1" {
@@ -68,7 +68,7 @@ resource "kubernetes_deployment_v1" "myapp1" {
       }
       spec {
         container {
-          image = "us-central1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"
+          image = "asia-south1-docker.pkg.dev/GOOGLE_CLOUD_PROJECT/myapps-repository/myapp1:COMMIT_SHA"
           name  = "myapp1-container"
           port {
             container_port = 80
@@ -96,7 +96,7 @@ steps:
   args:
   - 'build'
   - '-t'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
   - '.'
 
 # This step pushes the image to Artifact Registry
@@ -106,7 +106,7 @@ steps:
   id: Push Docker Image
   args:
   - 'push'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
 # [END cloudbuild - Docker Image Build]
 
 
@@ -165,7 +165,7 @@ steps:
     set -x && \
     cd terraform-gcp-gke-k8s-devops && \
     git add modules/kubernetes_deployment/main.tf && \
-    git commit -m "Updating image us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:${SHORT_SHA}
+    git commit -m "Updating image asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:${SHORT_SHA}
     Built from commit ${COMMIT_SHA} of repository terraform-gcp-gke-k8s-devops
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin main

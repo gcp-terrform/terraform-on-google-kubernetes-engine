@@ -55,7 +55,7 @@ locals {
 
 # Resource: Cloud DNS Record Set for A Record
 resource "google_dns_record_set" "a_record" {
-  project      = "kdaida123"
+  project      = "petromin-gms"
   managed_zone = "${local.dns_managed_zone}"
   name         = "${local.mydomain}."
   type         = "A"
@@ -96,7 +96,7 @@ resource "google_certificate_manager_certificate" "myapp1" {
 
 # Resource: DNS record to be created in DNS zone for DNS Authorization
 resource "google_dns_record_set" "myapp1_cname" {
-  project      = "kdaida123"
+  project      = "petromin-gms"
   managed_zone = "${local.dns_managed_zone}"
   name         = google_certificate_manager_dns_authorization.myapp1.dns_resource_record[0].name
   type         = google_certificate_manager_dns_authorization.myapp1.dns_resource_record[0].type

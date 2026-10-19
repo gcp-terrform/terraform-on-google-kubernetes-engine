@@ -22,11 +22,11 @@ description: Mount GCP Cloud Storage buckets to GKE Workloads
 gcloud container clusters get-credentials CLUSTER_NAME \
     --location=LOCATION
 gcloud container clusters get-credentials hr-dev-gke-cluster-autopilot \
-    --location=us-central1
+    --location=asia-south1
 
 # Get GCP Project Number
 gcloud projects describe my-sample-project --format="get(projectNumber)"
-gcloud projects describe gcplearn9 --format="get(projectNumber)"
+gcloud projects describe petromin-gms --format="get(projectNumber)"
 
 # Get GCP Project ID
 gcloud projects list
@@ -37,7 +37,7 @@ gcloud storage buckets add-iam-policy-binding gs://BUCKET_NAME \
     --role "ROLE_NAME"
 
 gcloud storage buckets add-iam-policy-binding gs://gke-object-storage-102 \
-    --member "principal://iam.googleapis.com/projects/899156651629/locations/global/workloadIdentityPools/gcplearn9.svc.id.goog/subject/ns/mydemo1ns/sa/mydemo1sa" \
+    --member "principal://iam.googleapis.com/projects/899156651629/locations/global/workloadIdentityPools/petromin-gms.svc.id.goog/subject/ns/mydemo1ns/sa/mydemo1sa" \
     --role "roles/storage.objectUser"
 
 [OR]    
@@ -46,8 +46,8 @@ gcloud projects add-iam-policy-binding GCS_PROJECT \
     --member "principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/PROJECT_ID.svc.id.goog/subject/ns/NAMESPACE/sa/KSA_NAME" \
     --role "ROLE_NAME"
 
-gcloud projects add-iam-policy-binding gcplearn9 \
-    --member "principal://iam.googleapis.com/projects/899156651629/locations/global/workloadIdentityPools/gcplearn9.svc.id.goog/subject/ns/mydemo1ns/sa/mydemo1sa" \
+gcloud projects add-iam-policy-binding petromin-gms \
+    --member "principal://iam.googleapis.com/projects/899156651629/locations/global/workloadIdentityPools/petromin-gms.svc.id.goog/subject/ns/mydemo1ns/sa/mydemo1sa" \
     --role "roles/storage.objectUser"    
 ```
 
@@ -234,14 +234,14 @@ terraform {
 variable "gcp_project" {
   description = "Project in which GCP Resources to be created"
   type = string
-  default = "kdaida123"
+  default = "petromin-gms"
 }
 
 # GCP Region
 variable "gcp_region1" {
   description = "Region in which GCP Resources to be created"
   type = string
-  default = "us-east1"
+  default = "asia-south1"
 }
 
 
@@ -560,8 +560,8 @@ output "myapp1_loadbalancer_ip" {
 
 ### Step-03-14: terraform.tfvars
 ```hcl
-gcp_project     = "gcplearn9"
-gcp_region1     = "us-central1"
+gcp_project     = "petromin-gms"
+gcp_region1     = "asia-south1"
 environment     = "dev"
 business_divsion = "hr"
 ```

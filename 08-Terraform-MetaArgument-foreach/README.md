@@ -100,9 +100,9 @@ terraform destroy -auto-approve
 variable "zone_machine_map" {
   type = map(string)
   default = {
-    "us-central1-a" = "e2-micro"
-    "us-central1-b" = "e2-small"
-    "us-central1-c" = "e2-medium"
+    "asia-south1-a" = "e2-micro"
+    "asia-south1-b" = "e2-small"
+    "asia-south1-c" = "e2-medium"
   }
 }
 # Resource Block: Create a Compute Engine instance

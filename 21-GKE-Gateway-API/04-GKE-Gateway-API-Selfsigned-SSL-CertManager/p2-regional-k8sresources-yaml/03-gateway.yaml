@@ -11,7 +11,7 @@ spec:
     tls:
       mode: Terminate
       options: 
-        networking.gke.io/cert-manager-certs: app1-us-central1-cert  
+        networking.gke.io/cert-manager-certs: app1-asia-south1-cert
   addresses:
   - type: NamedAddress
     value: my-regional-ip1

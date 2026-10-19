@@ -13,7 +13,7 @@ resource "google_compute_address" "bastion_internal_ip" {
 resource "google_compute_instance" "bastion" {
   name         = "${local.name}-bastion-vm"
   machine_type = var.machine_type
-  zone         = "us-central1-a"
+  zone         = "asia-south1-a"
   tags        = [tolist(google_compute_firewall.fw_ssh.target_tags)[0]]
   boot_disk {
     initialize_params {

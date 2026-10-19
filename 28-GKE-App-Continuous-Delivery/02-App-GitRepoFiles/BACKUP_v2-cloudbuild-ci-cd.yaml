@@ -6,7 +6,7 @@ steps:
   args:
   - 'build'
   - '-t'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
   - '.'
 
 # This step pushes the image to Artifact Registry
@@ -16,7 +16,7 @@ steps:
   id: Push Docker Image
   args:
   - 'push'
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:$SHORT_SHA'
 # [END cloudbuild - Docker Image Build]
 
 
@@ -75,7 +75,7 @@ steps:
     set -x && \
     cd gcp-gke-terraform-k8s && \
     git add modules/kubernetes_deployment/main.tf && \
-    git commit -m "Updating image us-central1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:${SHORT_SHA}
+    git commit -m "Updating image asia-south1-docker.pkg.dev/$PROJECT_ID/myapps-repository/myapp1:${SHORT_SHA}
     Built from commit ${COMMIT_SHA} of repository gcp-gke-terraform-k8s
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin main
